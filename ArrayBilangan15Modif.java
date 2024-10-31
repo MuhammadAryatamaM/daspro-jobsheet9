@@ -8,4 +8,4 @@ public class ArrayBilangan15Modif {
             System.out.println(bil[i]);
         }
     }
-}
+} 
