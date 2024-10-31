@@ -4,8 +4,8 @@ public class ArrayRataNilai15Modif {
         
         Scanner sc = new Scanner(System.in);
       
-        double rata2, total = 0;
-        int counter = 0;
+        double totalLulus = 0, totalTakLulus = 0, total = 0, rata2, rata2Lulus, rata2TakLulus;
+        int counterLulus = 0, counterTakLulus = 0;
         
         System.out.print("Masukkan jumlah mahasiswa : ");                 // program input sepanjang apa array yang dimau
         int jml = sc.nextInt();
@@ -16,7 +16,11 @@ public class ArrayRataNilai15Modif {
             System.out.print("Masukkan nilai mahasiswa ke-" + (i + 1) + " : ");
             nilaiMhs[i] = sc.nextInt();
             if (nilaiMhs[i] > 70) {                                         // program menghitung banyak mahasiswa lulus
-                counter++;
+                counterLulus++;
+                totalLulus += nilaiMhs[i];
+            } else {                                                        
+                counterTakLulus++;
+                totalTakLulus += nilaiMhs[i];
             }
         }
 
@@ -24,8 +28,12 @@ public class ArrayRataNilai15Modif {
             total += nilaiMhs[i];
         }
 
-        rata2 = total/nilaiMhs.length;
+        rata2 = total / nilaiMhs.length;
+        rata2Lulus = totalLulus / counterLulus;
+        rata2TakLulus = totalTakLulus / counterTakLulus;
         System.out.println("Rata-rata nilai = " + rata2);
-        System.out.println("Banyak mahasiswa yang lulus sebanyak " + counter);
+        System.out.println("Rata-rata nilai lulus = " + rata2Lulus);
+        System.out.println("Rata-rata nilai tidak lulus = " + rata2TakLulus);
+        System.out.println("Banyak mahasiswa yang lulus sebanyak " + counterLulus);
     }
 }
